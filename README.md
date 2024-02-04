@@ -9,6 +9,10 @@ Compiler:
 ```
 gcc
 ```
+Example Ubuntu:
+```
+apt install build-essential
+```
 #### Windows
 IDE:\
 https://www.jetbrains.com/clion/
