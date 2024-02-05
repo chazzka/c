@@ -3,7 +3,9 @@ https://github.com/zorgnax/libtap
 
 ### how to run main:
 
-```c
+
+```terminal
+mkdir build
 gcc main.c -o .\build\main
 .\build\main.exe
 ```
