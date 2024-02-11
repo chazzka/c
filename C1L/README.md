@@ -1,5 +1,5 @@
 Lekce 1
-## Problém s globálnímí/ nekonstantními proměnnými
+## Problém s globálními/ nekonstantními proměnnými
 
 Bad practice:
 
