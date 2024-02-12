@@ -38,3 +38,26 @@ int main()
 
 Řešení:
 
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int doSomething(int a)
+{
+    return a + 5;
+}
+
+int main()
+{
+    const int g_mode = 1;
+
+    // this does NOT change g_mode
+    const int bigger_g_mode = doSomething(g_mode);
+
+    printf("%d\n", g_mode);
+    printf("%d", bigger_g_mode);
+
+
+    return 0;
+}
+```
