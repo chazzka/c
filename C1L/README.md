@@ -1,4 +1,20 @@
 Lekce 1
+
+```c
+#include <stdio.h>
+
+int main() {
+    printf("%d", 5);
+    return 0;
+}
+```
+
+| format | desc | example |
+|---|---|---|
+| %c | character | printf("%c", 'a') |
+| %d | decimal (integer) number | printf("%d", 15) |
+| %f | floating-point number | printf("%.2f", 3.1415) |
+| %s | a string of characters | printf("%s", "ahoj") |
 ## Problém s globálními/ nekonstantními proměnnými
 
 Bad practice:
