@@ -54,8 +54,8 @@ int main()
     // this does NOT change g_mode
     const int bigger_g_mode = doSomething(g_mode);
 
-    printf("%d\n", g_mode);
-    printf("%d", bigger_g_mode);
+    printf("%d\n", g_mode); // 1
+    printf("%d", bigger_g_mode); // 6
 
 
     return 0;
