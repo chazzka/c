@@ -27,7 +27,7 @@ int g_mode; // global mutable variable
 
 void doSomething()
 {
-    g_mode = 2; // set the global g_mode variable to 2
+    g_mode += 5; // set the global g_mode variable to 2
 }
 
 int main()
@@ -36,16 +36,9 @@ int main()
 
     doSomething();
 
-    // here, g_mode is not 1 but 2!!!
+    g_mode = g_mode * g_mode;
 
-    if (g_mode == 1)
-    {
-        std::cout << "No threat detected.\n";
-    }
-    else
-    {
-        std::cout << "Launching nuclear missiles...\n";
-    }
+    printf("what is gmode? %d, g_mode);
 
     return 0;
 }
@@ -64,12 +57,16 @@ int addFive(int a)
     return a + 5;
 }
 
+int power_of_two(int input) {
+    return input * input;
+}
+
 int main()
 {
     const int g_mode = 1;
 
     // this does NOT change g_mode
-    const int bigger_g_mode = addFive(g_mode);
+    const int bigger_g_mode = power_of_two(addFive(g_mode));
 
     printf("%d\n", g_mode); // 1
     printf("%d", bigger_g_mode); // 6
