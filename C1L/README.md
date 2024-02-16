@@ -38,7 +38,7 @@ int main()
 
     g_mode = g_mode * g_mode;
 
-    printf("what is gmode? %d, g_mode);
+    printf("what is gmode? %d", g_mode);
 
     return 0;
 }
