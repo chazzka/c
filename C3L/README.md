@@ -1,4 +1,141 @@
-### Struktury + koncová rekurze
+### STACK BASED programming
+#### Ukazatel, Pole, struktura, sizeof, linked list
+
+Ukazatel
+
+```c
+int value = 5;  // 4B
+int *pValue = &value;  // 8B
+
+int * pointer = NULL; // pointer can be null, dulezite pro LL
+
+printf("%d\n", *pValue); // 5 - dereference
+printf("%p\n", pValue);
+printf("%p\n", &value); 
+```
+
+Pole
+
+```c
+const int arr[] = {1,2,3,4}; //staticka velikost, nelze menit
+// arr[0] = 1; // bad practice, proto const
+
+int arr[50]; // prazdne, staticka velikost, bad practice!
+    
+printf("%d\n", *arr);
+printf("%d\n", *arr+1);
+    
+printf("Size of arr variable: %lu\n", sizeof(arr));
+printf("Size of arr passed through function: %lu\n", arrsize(arr));
+```
+
+print:
+
+```c
+void printArrLoop(int *arr, size_t size) {
+    for(int i = 0; i < size; i++)
+        printf("%d,", arr[i]);
+}
+
+// this prints array using loop and pointer arithmetic
+void printArrLoopP(int *arr, size_t size) {
+    TODO:
+}
+
+// this print array using recursion
+void printArrRec(int *arr, size_t size) {
+    TODO:
+}
+```
+
+
+### Struktura, string literals
+
+```c
+
+typedef struct {
+    char * name;
+    int age;
+} Person;
+
+
+void printPerson(Person p) {
+    printf("name: %s,", p.name);
+    printf("age: %d", p.age);
+}
+
+
+int main()
+{
+    //string literal
+    
+    char * sl = "totonejdezmenit";
+    
+    // sl[0] = 'A'; toto spadne
+    
+    Person p = {"adam", 5};
+
+    printf("%ld", sizeof(p)); // ???
+    
+    Person p2 = p; // kopie, diky stacku!!!
+
+   // demonstrace, ze to je kopie:
+
+    p.name = "oto"; // bad practice! p by melo byt const
+    
+    printPerson(p);
+    
+    printPerson(p2);
+    
+    return 0;
+}
+```
+
+
+### Linked list
+```c
+#include <stdio.h>
+
+
+typedef struct Node {
+    struct Node * next;
+    double val;
+} Node;
+
+
+void printL(Node * n) {
+    if(n == NULL) {
+        printf("NULL\n");
+        return;
+    }
+    printf("%lf->", n->val);
+    printL(n->next);
+}
+
+int main()
+{
+    Node first = {NULL, 5};
+    
+    Node second = {&first, 6};
+    
+    printL(&second);
+    
+    Node third = {&second, 7};
+    
+    printL(&third);
+    
+    // zkracene:
+    
+    Node all = {&(Node){&(Node){NULL, 8}, 6}, 9};
+    
+    printL(&all);
+    
+    return 0;
+}
+```
+
+
+### Koncová rekurze
 
 
 #### Struct
