@@ -27,6 +27,14 @@ printf("%d\n", *arr+1);
     
 printf("Size of arr variable: %lu\n", sizeof(arr));
 printf("Size of arr passed through function: %lu\n", arrsize(arr));
+
+//pozor:
+int arr2[] = {1,2,3,4};
+int *arr3 = arr2;
+arr3[0] = 55; // mutates arr2!!!!
+//fix:
+const int arr4[] = {1,2,3,4};
+//int *arr5 = arr4; // error
 ```
 
 print:
