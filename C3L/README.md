@@ -75,11 +75,13 @@ void printPerson(Person p) {
 
 int main()
 {
-    //string literal
+    //readonly string literal
     
     char * sl = "totonejdezmenit";
-    
+
     // sl[0] = 'A'; toto spadne
+
+    char *sl2 = sl; // kopie, protoze readonly pamet se kopiruje
     
     Person p = {"adam", 5};
 
