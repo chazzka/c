@@ -76,26 +76,36 @@ void printPerson(Person p) {
 int main()
 {
     //readonly string literal
-    
-    char * sl = "totonejdezmenit";
 
+    char * s1 = "totonejdezmenitpoprvku";
     // sl[0] = 'A'; toto spadne
+    
+    // pozor, neprobehne kopie hodnot, ale ukazatelu!
+    char *s2 = s1;
 
-    char *sl2 = sl; // kopie, protoze readonly pamet se kopiruje
+    // kopie hodnot (nová adresa) probehne pri prirazeni nove hodnoty:
+    s1 = "zmena";  // zkus zakomentovat
+
+    printf("%p -- %s \n", s1, s1);
+    printf("%p -- %s \n", s2, s2);
     
     Person p = {"adam", 5};
 
     printf("%ld", sizeof(p)); // ???
     
-    Person p2 = p; // kopie, diky stacku!!!
+    Person p2 = p; // kopie, ale zkopiroval se ukazatel
 
-   // demonstrace, ze to je kopie:
-
+    printf("%p\n", p.name); // 0xx005
+    printf("%p\n", p2.name); // 0xx005
+   
+    // nove prirazeni - nova adresa
     p.name = "oto"; // bad practice! p by melo byt const
-    
-    printPerson(p);
-    
-    printPerson(p2);
+
+    printf("%p\n", p.name); // 0xx007
+    printf("%p\n", p2.name); // 0xx005
+
+    printPerson(p); // oto
+    printPerson(p2); // adam
     
     return 0;
 }
