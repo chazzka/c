@@ -124,12 +124,7 @@ typedef struct Node {
 
 
 void printL(Node * n) {
-    if(n == NULL) {
-        printf("NULL\n");
-        return;
-    }
-    printf("%lf->", n->val);
-    printL(n->next);
+    //TODO:
 }
 
 int main()
