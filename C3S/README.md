@@ -17,7 +17,7 @@ void print_list(Node * n) {
 }
 ```
 
-#### Ukol 3: funkce pro vraceni nteho prvku
+#### Ukol 3: funkce pro vraceni nteho prvku + test
 ```c
 int take_nth(Node *n, int nth) {
 //TODO:
