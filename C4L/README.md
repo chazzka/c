@@ -30,7 +30,7 @@ int * insert(int*oldarr, int length, int item) {
 
 Dynamický vektor:
 
-Poznámka autora: bylo by lepší, kdyby funkce vracelýy
+Poznámka autora: bylo by lepší, kdyby funkce vracely nový list, nemutovaly původní, ale pro podobnost s jazykem c# ukazuji tuto možnost i za cenu špatné testovatelnosti.
 
 1. alokujeme strukturu, aby drzela velikost
 ```c
