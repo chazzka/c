@@ -18,8 +18,8 @@ Vector sort
 - přijme vektor a příznak, zda ascending nebo descending
 - vrátí nový vektor, seřazený
 
-insert, from_static,delete_at = 1B\
-sort = 1B\
+insert, from_static,sort = 1B\
+delete_at = 1B\
 testy všech funkcí pomocí libtap = 1B
 
 
